@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4199120241601430}
   - component: {fileID: 114547418513436938}
-  - component: {fileID: 114498086947983008}
+  - component: {fileID: 114655559270753266}
   m_Layer: 0
   m_Name: NetworkPrefab
   m_TagString: Untagged
@@ -41,20 +41,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114498086947983008
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1402273901004816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 399d38ca54475fc4785bcc5b3316424e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clock: {fileID: 1532631203907098, guid: cf140683075f5fb4aa8e8ab25e8dd6f6, type: 2}
-  radio: {fileID: 1658598335556206, guid: a38a8540dae68a040aa7b54a4386bd92, type: 2}
-  phone: {fileID: 1761702395904900, guid: 4624d37e335821b488b88674016feb05, type: 2}
 --- !u!114 &114547418513436938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -87,3 +73,18 @@ MonoBehaviour:
     i15: 113
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &114655559270753266
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1402273901004816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ef9e65be0d41d46ad80ad678dc3cc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioInUse:
+  - {fileID: 8300000, guid: 3e8a7c2cfe461f54fa879a06c38a7b59, type: 3}
+  - {fileID: 8300000, guid: 9a1915bd4c2a6f9428e826ecd2b62b68, type: 3}
+  - {fileID: 8300000, guid: 91e2b9787cf7fe342be10dc3d72bda94, type: 3}

@@ -12,6 +12,10 @@ public class FlowController : MonoBehaviour {
 	public GameObject faciCanvas;
 	public GameObject[] scenes;
 	public AudioClip[] themeMusicForEachScene;
+	public string[] monthForEachScene;
+	public int[] dayForEachScene;
+	public int[] hourForEachScene;
+	public int[] minForEachScene;
 	public GameObject[] props;
 	public GameObject networkPrefab;
 	public AudioSource mainAudioSource;
@@ -67,12 +71,17 @@ public class FlowController : MonoBehaviour {
 			scenes[currentScene].SetActive(true);
 
 			// play theme song
-			PlayBackgroundMusic(themeMusicForEachScene[currentScene]);
+			if (currentScene < themeMusicForEachScene.Length && themeMusicForEachScene[currentScene]!=null) {
+				PlayBackgroundMusic(themeMusicForEachScene[currentScene]);
+			}
 			// change clock
-			
+			if (currentScene < monthForEachScene.Length) {
+				networkPrefab.GetComponent<PropsController>().RpcSendTimeInfoToClock(monthForEachScene[currentScene], dayForEachScene[currentScene], hourForEachScene[currentScene], minForEachScene[currentScene]);
+			}
 			// disable phone
 			networkPrefab.GetComponent<PropsController>().RpcDisablePhone();
 			// disable radio
+			// TODO
 		}
 	}
 

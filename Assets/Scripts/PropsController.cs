@@ -10,15 +10,49 @@ public class PropsController : NetworkBehaviour {
 
     public AudioClip[] audioInUse;
 
+	// Send message to clock
+	[ClientRpc]
+	public void RpcSendTimeInfoToClock(string month, int date, int hour, int min) {
+		Debug.Log("set the clock");
+		clock = GameObject.FindGameObjectWithTag("Clock");
+		if (clock != null) {
+			clock.GetComponent<Clock>().SetMonth(month);
+			clock.GetComponent<Clock>().SetDate(date);
+			clock.GetComponent<Clock>().SetTime(hour, min);
+		}
+	}
+
 	// Send message to phone
 	[ClientRpc]
-    public void RpcActivePhoneWithNumberAndClip(string number, int audioClipNumber)
-    {
-        Debug.Log("active and set number: "+number);
+    public void RpcActivePhone() {
+		Debug.Log("active phone");
 		phone = GameObject.FindGameObjectWithTag("PhoneWheel");
 		if (phone != null) {
 			phone.GetComponent<PhoneWheel>().ActivePhone();
+		}
+		else {
+			Debug.Log("no phone");
+		}
+	}
+
+	[ClientRpc]
+    public void RpcSetPhoneNumber(string number) {
+		Debug.Log("set phone number");
+		phone = GameObject.FindGameObjectWithTag("PhoneWheel");
+		if (phone != null) {
 			phone.GetComponent<PhoneWheel>().SetTargetNumber(number);
+		}
+		else {
+			Debug.Log("no phone");
+		}
+	}
+
+	[ClientRpc]
+	public void RpcSetPhoneClip(int audioClipNumber)
+    {
+        Debug.Log("set phone clip");
+		phone = GameObject.FindGameObjectWithTag("PhoneWheel");
+		if (phone != null) {
 			phone.GetComponent<AudioSource>().clip = audioInUse[audioClipNumber];
 		}
 		else {
@@ -65,6 +99,9 @@ public class PropsController : NetworkBehaviour {
 			Debug.Log("no phone");
 		}
     }
+
+	// Send message to radio
+	// [ClientRpc]
     
 
 }
