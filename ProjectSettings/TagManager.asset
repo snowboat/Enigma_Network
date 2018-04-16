@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ObjectButton
+  - ObjectWheel
+  - Clock
+  - PhoneWheel
+  - Radio
+  - RadioButton
+  - RadioWheel
+  - RadioChannel
+  - PhoneNumber
+  - PhoneStop
   layers:
   - Default
   - TransparentFX

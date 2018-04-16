@@ -23,6 +23,9 @@ public class PhoneWheel : MonoBehaviour {
     private float stopTime = -1;
 
     public string targetNumber = "000000";
+    public int curNumber = -1;
+    public GameObject curNumberObject;
+    public bool reachStop = false;
     public float waitCallTime = 5;
     public float rotateSpeed = 100.0f;
     public float resetSpeed = 30.0f;
@@ -37,39 +40,18 @@ public class PhoneWheel : MonoBehaviour {
     // Use this for initialization
     void Start () {
         phone = GetComponent<AudioSource>();
-
-        wheelCenter = new Vector2(Screen.width / 2, Screen.height / 2);
-        dialDir = presetDialDir - wheelCenter;
-        dialDir.Normalize();
-      //  dialDir.y *= -1;
 	}
 
-    private void FixedUpdate()
-    {
-        pos = gesture.ScreenPosition;
-        curDir = pos - wheelCenter;
-        curDir.Normalize();
-        dotProduct = Vector2.Dot(curDir, dialDir);
-
-        //Debug.Log(dotProduct);
-
-        addDigit();
-    }
 
     // Update is called once per frame
     void Update() {
-      //  Debug.Log(gesture.ScreenPosition);
+        //  Debug.Log(gesture.ScreenPosition);
+        //Debug.Log(curNumber);
+        addDigit();
 
         if (gesture.State == TouchScript.Gestures.Gesture.GestureState.Changed && !gestureChanged)
         {
             gestureChanged = true;
-
-            startDir = gesture.ScreenPosition - wheelCenter;
-            startDir.Normalize();
-
-            string output = startDir.x.ToString("0.000") + ", " + startDir.y.ToString("0.000");
-            Debug.Log(output);
-            //Debug.Log(startDir);
         }
 
         if (gestureChanged && gesture.State == TouchScript.Gestures.Gesture.GestureState.Idle)
@@ -82,7 +64,9 @@ public class PhoneWheel : MonoBehaviour {
             StartCoroutine(ResetWheel());
             resetWheel = false;
             addedNumber = false;
+            reachStop = false;
             rotateAngle = 0.0f;
+            curNumber = -1;
 
             stopTime = Time.realtimeSinceStartup;
             startDir = new Vector2(-5, -5);
@@ -130,38 +114,13 @@ public class PhoneWheel : MonoBehaviour {
         if (!gestureChanged)
             return false;
 
-        if (pos.x <= 0 || pos.y <= 0 || pos.x < Screen.width / 2 || pos.y > Screen.height / 2)
-            return false;
-
-        if (dotProduct > 0.988 && dotProduct < 0.998)
+        if (reachStop)
         {
            // Debug.Log(dotProduct);
-            if (!addedNumber)
+            if (!addedNumber && curNumber >= 0)
             {
                 addedNumber = true;
-                if (startDir.x <= 1.1f && startDir.x >= 0.78f && startDir.y >= 0.38f && startDir.y <= 0.61f)
-                    number += "1";
-                else if (startDir.x <= 0.61f && startDir.x >= 0.38f && startDir.y >= 0.78f && startDir.y <= 0.92f)
-                    number += "2";
-                else if (startDir.x <= 0.3f && startDir.x >= -0.21f && startDir.y >= 0.9f && startDir.y <= 1.1f)
-                    number += "3";
-                else if (startDir.x <= -0.39f && startDir.x >= -0.61f && startDir.y >= 0.79f && startDir.y <= 1.1f)
-                    number += "4";
-                else if (startDir.x <= -0.75f && startDir.x >= -1.0f && startDir.y >= 0.35f && startDir.y <= 0.65f)
-                    number += "5";
-                else if (startDir.x <= -0.9f && startDir.x >= -1.001f && startDir.y >= -0.21f && startDir.y <= 0.2f)
-                    number += "6";
-                else if (startDir.x <= -0.77f && startDir.x >= -0.92f && startDir.y >= -0.63f && startDir.y <= -0.4f)
-                    number += "7";
-                else if (startDir.x <= -0.36f && startDir.x >= -0.66f && startDir.y >= -0.95f && startDir.y <= -0.76f)
-                    number += "8";
-                else if (startDir.x <= 0.15f && startDir.x >= -0.2f && startDir.y >= -1.1f && startDir.y <= -0.95f)
-                    number += "9";
-                else if (startDir.x <= 0.57f && startDir.x >= 0.3f && startDir.y >= -0.95f && startDir.y <= -0.8f)
-                    number += "0";
-                else {
-                    
-                }
+                number += curNumber;
 
                 Debug.Log("Update number: " + number);
             }
