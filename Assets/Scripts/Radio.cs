@@ -7,11 +7,18 @@ public class Radio : MonoBehaviour
 
     AudioSource radio;
     public AudioClip radio_static;
-    public AudioClip radio01;
-    public AudioClip radio02;
-    public AudioClip radio03;
 
-    private bool isRadioActived = true;
+    public AudioClip real_radio01;
+    public AudioClip real_radio02;
+    public AudioClip real_radio03;
+
+    public AudioClip fake_radio01;
+    public AudioClip fake_radio02;
+    public AudioClip fake_radio03;
+
+    private AudioClip radio01;
+    private AudioClip radio02;
+    private AudioClip radio03;
 
     public float channelPosMin, channelPosMax;
     private float angleDis, channelDis, minAngle, channelRatio, channelX;
@@ -41,6 +48,10 @@ public class Radio : MonoBehaviour
        // Debug.Log(channelRatio);
 
         button = GameObject.FindGameObjectWithTag("RadioButton");
+
+        radio01 = fake_radio01;
+        radio01 = fake_radio02;
+        radio03 = fake_radio03;
     }
 
     // Update is called once per frame
@@ -120,11 +131,15 @@ public class Radio : MonoBehaviour
 
     public void ActiveRadio()
     {
-        isRadioActived = true;
+        radio01 = real_radio01;
+        radio02 = real_radio02;
+        radio03 = real_radio03;
     }
 
     public void DisableRadio()
     {
-        isRadioActived = false;
+        radio01 = fake_radio01;
+        radio01 = fake_radio02;
+        radio03 = fake_radio03;
     }
 }
