@@ -1,0 +1,173 @@
+fileFormatVersion: 2
+guid: 27d14447184e54c3e82e7d52eff17472
+timeCreated: 1523739766
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Pixel_ScreenEdges
+    100004: Pixel_ScreenSurface
+    100006: Pixel_UI
+    100008: Radio_ChannelScreen
+    100010: Radio_Knob
+    100012: Radio_KnobBase
+    100014: Radio_RedLine
+    100016: Radio_ScreenFrame
+    100018: Radio_Surface
+    100020: Radio_Switch
+    100022: Radio_SwitchFrame
+    100024: Radio_Text
+    100026: Radio_Text 1
+    100028: Radio_Text1
+    100030: Radio_Text2
+    100032: Radio_Text3
+    100034: Radio_Text4
+    100036: Radio_UI
+    400000: //RootNode
+    400002: Pixel_ScreenEdges
+    400004: Pixel_ScreenSurface
+    400006: Pixel_UI
+    400008: Radio_ChannelScreen
+    400010: Radio_Knob
+    400012: Radio_KnobBase
+    400014: Radio_RedLine
+    400016: Radio_ScreenFrame
+    400018: Radio_Surface
+    400020: Radio_Switch
+    400022: Radio_SwitchFrame
+    400024: Radio_Text
+    400026: Radio_Text 1
+    400028: Radio_Text1
+    400030: Radio_Text2
+    400032: Radio_Text3
+    400034: Radio_Text4
+    400036: Radio_UI
+    2100000: lambert1
+    2100002: typeBlinn
+    2300000: Pixel_ScreenEdges
+    2300002: Pixel_ScreenSurface
+    2300004: Radio_ChannelScreen
+    2300006: Radio_Knob
+    2300008: Radio_KnobBase
+    2300010: Radio_RedLine
+    2300012: Radio_ScreenFrame
+    2300014: Radio_Surface
+    2300016: Radio_Switch
+    2300018: Radio_SwitchFrame
+    2300020: Radio_Text 1
+    2300022: Radio_Text1
+    2300024: Radio_Text2
+    2300026: Radio_Text3
+    2300028: Radio_Text4
+    3300000: Pixel_ScreenEdges
+    3300002: Pixel_ScreenSurface
+    3300004: Radio_ChannelScreen
+    3300006: Radio_Knob
+    3300008: Radio_KnobBase
+    3300010: Radio_RedLine
+    3300012: Radio_ScreenFrame
+    3300014: Radio_Surface
+    3300016: Radio_Switch
+    3300018: Radio_SwitchFrame
+    3300020: Radio_Text 1
+    3300022: Radio_Text1
+    3300024: Radio_Text2
+    3300026: Radio_Text3
+    3300028: Radio_Text4
+    4300000: Pixel_ScreenEdges
+    4300002: Pixel_ScreenSurface
+    4300004: Radio_Surface
+    4300006: Radio_Text4
+    4300008: Radio_Text3
+    4300010: Radio_Text2
+    4300012: Radio_Text1
+    4300014: Radio_Text
+    4300016: Radio_KnobBase
+    4300018: Radio_Switch
+    4300020: Radio_SwitchFrame
+    4300022: Radio_ChannelScreen
+    4300024: Radio_ScreenFrame
+    4300026: Radio_RedLine
+    4300028: Radio_Knob
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
