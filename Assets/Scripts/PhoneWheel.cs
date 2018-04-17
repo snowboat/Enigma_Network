@@ -68,6 +68,8 @@ public class PhoneWheel : MonoBehaviour {
             rotateAngle = 0.0f;
             curNumber = -1;
 
+            this.GetComponent<Transformer>().enabled = true;
+
             stopTime = Time.realtimeSinceStartup;
             startDir = new Vector2(-5, -5);
         }
@@ -116,12 +118,13 @@ public class PhoneWheel : MonoBehaviour {
 
         if (reachStop)
         {
-           // Debug.Log(dotProduct);
+            // Debug.Log(dotProduct);
+            this.GetComponent<Transformer>().enabled = false;
             if (!addedNumber && curNumber >= 0)
             {
                 addedNumber = true;
                 number += curNumber;
-
+                curNumber = -1;
                 Debug.Log("Update number: " + number);
             }
             return true;
@@ -154,7 +157,7 @@ public class PhoneWheel : MonoBehaviour {
 
         //rotateAngle = Mathf.Min(maxAngle, Mathf.Max(minAngle, rotateAngle));
         //rotateAngle = rotateAngle % 360;
-        transform.localEulerAngles = new Vector3(0, rotateAngle, 0);
+        //transform.localEulerAngles = new Vector3(0, rotateAngle, 0);
     }
 
     private IEnumerator ResetWheel()

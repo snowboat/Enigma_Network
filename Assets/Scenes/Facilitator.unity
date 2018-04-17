@@ -930,7 +930,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &105655341
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1358,6 +1358,7 @@ GameObject:
   - component: {fileID: 268410349}
   - component: {fileID: 268410348}
   - component: {fileID: 268410347}
+  - component: {fileID: 268410352}
   m_Layer: 0
   m_Name: number6
   m_TagString: PhoneNumber
@@ -1466,7 +1467,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 268410345}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -1479,6 +1480,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 268410345}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &268410352
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 268410345}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &297795186
 GameObject:
   m_ObjectHideFlags: 0
@@ -2218,7 +2234,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &448392417
 Transform:
   m_ObjectHideFlags: 0
@@ -2447,7 +2463,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &480504083
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6005,6 +6021,7 @@ GameObject:
   - component: {fileID: 974032302}
   - component: {fileID: 974032301}
   - component: {fileID: 974032300}
+  - component: {fileID: 974032305}
   m_Layer: 0
   m_Name: number0
   m_TagString: PhoneNumber
@@ -6113,7 +6130,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 974032298}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -6126,6 +6143,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 974032298}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &974032305
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 974032298}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &999426334
 GameObject:
   m_ObjectHideFlags: 0
@@ -6838,6 +6870,7 @@ GameObject:
   - component: {fileID: 1095908280}
   - component: {fileID: 1095908279}
   - component: {fileID: 1095908278}
+  - component: {fileID: 1095908283}
   m_Layer: 0
   m_Name: number7
   m_TagString: PhoneNumber
@@ -6946,7 +6979,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1095908276}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -6959,6 +6992,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1095908276}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1095908283
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1095908276}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1096155228
 GameObject:
   m_ObjectHideFlags: 0
@@ -7275,11 +7323,11 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 0.0000001
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &1129812617
 GameObject:
@@ -8643,6 +8691,7 @@ GameObject:
   - component: {fileID: 1366165748}
   - component: {fileID: 1366165752}
   - component: {fileID: 1366165751}
+  - component: {fileID: 1366165753}
   m_Layer: 0
   m_Name: number5
   m_TagString: PhoneNumber
@@ -8704,7 +8753,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1366165746}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -8764,6 +8813,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisNumber: 5
+--- !u!54 &1366165753
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1366165746}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1379079183
 GameObject:
   m_ObjectHideFlags: 0
@@ -9186,6 +9250,7 @@ GameObject:
   - component: {fileID: 1430369317}
   - component: {fileID: 1430369321}
   - component: {fileID: 1430369320}
+  - component: {fileID: 1430369322}
   m_Layer: 0
   m_Name: number2
   m_TagString: PhoneNumber
@@ -9247,7 +9312,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1430369315}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -9307,6 +9372,21 @@ MonoBehaviour:
     m_TypeName: TouchScript.Gestures.Gesture+GestureEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   ignoreChildren: 0
+--- !u!54 &1430369322
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1430369315}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1430376367
 GameObject:
   m_ObjectHideFlags: 0
@@ -9325,7 +9405,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1430376368
 Transform:
   m_ObjectHideFlags: 0
@@ -9678,7 +9758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1476561407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10195,7 +10275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1532493419
 AudioListener:
   m_ObjectHideFlags: 0
@@ -10369,6 +10449,7 @@ GameObject:
   - component: {fileID: 1543059099}
   - component: {fileID: 1543059103}
   - component: {fileID: 1543059102}
+  - component: {fileID: 1543059104}
   m_Layer: 0
   m_Name: number4
   m_TagString: PhoneNumber
@@ -10430,7 +10511,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1543059097}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -10490,6 +10571,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisNumber: 4
+--- !u!54 &1543059104
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1543059097}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1552951191
 GameObject:
   m_ObjectHideFlags: 0
@@ -10503,6 +10599,7 @@ GameObject:
   - component: {fileID: 1552951195}
   - component: {fileID: 1552951194}
   - component: {fileID: 1552951193}
+  - component: {fileID: 1552951198}
   m_Layer: 0
   m_Name: number9
   m_TagString: PhoneNumber
@@ -10611,7 +10708,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1552951191}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -10624,6 +10721,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1552951191}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1552951198
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1552951191}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1565820806
 GameObject:
   m_ObjectHideFlags: 0
@@ -10864,6 +10976,23 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400052, guid: 6202dac8e063c4a4e8fae25694a4f100, type: 3}
   m_PrefabInternal: {fileID: 1721648971}
+--- !u!114 &1592763206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1592763204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978a486d8ecf8437cbb87e8534908895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableSmoothing: 0
+  smoothingFactor: 0.00001
+  positionThreshold: 0.01
+  rotationThreshold: 0.1
+  scaleThreshold: 0.01
+  allowChangingFromOutside: 0
 --- !u!114 &1592763208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10936,20 +11065,6 @@ MonoBehaviour:
   projectionProps: 0
   projection: 1
   projectionPlaneNormal: {x: 0, y: 1, z: 0}
---- !u!64 &1592763210
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1592763204}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300010, guid: 6202dac8e063c4a4e8fae25694a4f100, type: 3}
 --- !u!82 &1592763211
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11608,19 +11723,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400056, guid: 6202dac8e063c4a4e8fae25694a4f100, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400052, guid: 6202dac8e063c4a4e8fae25694a4f100, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 400054, guid: 6202dac8e063c4a4e8fae25694a4f100, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400048, guid: 6202dac8e063c4a4e8fae25694a4f100, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6202dac8e063c4a4e8fae25694a4f100, type: 3}
@@ -12068,7 +12183,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1944671096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12201,6 +12316,7 @@ GameObject:
   - component: {fileID: 1959337955}
   - component: {fileID: 1959337958}
   - component: {fileID: 1959337959}
+  - component: {fileID: 1959337960}
   m_Layer: 0
   m_Name: number1
   m_TagString: PhoneNumber
@@ -12262,7 +12378,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1959337953}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -12322,6 +12438,21 @@ MonoBehaviour:
     m_TypeName: TouchScript.Gestures.Gesture+GestureEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   ignoreChildren: 0
+--- !u!54 &1959337960
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1959337953}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &1963721101
 Prefab:
   m_ObjectHideFlags: 0
@@ -12585,6 +12716,7 @@ GameObject:
   - component: {fileID: 1999615772}
   - component: {fileID: 1999615776}
   - component: {fileID: 1999615775}
+  - component: {fileID: 1999615777}
   m_Layer: 0
   m_Name: number3
   m_TagString: PhoneNumber
@@ -12646,7 +12778,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1999615770}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -12706,6 +12838,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisNumber: 3
+--- !u!54 &1999615777
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1999615770}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &2023384294
 GameObject:
   m_ObjectHideFlags: 0
@@ -13233,6 +13380,7 @@ GameObject:
   - component: {fileID: 2113779895}
   - component: {fileID: 2113779894}
   - component: {fileID: 2113779893}
+  - component: {fileID: 2113779898}
   m_Layer: 0
   m_Name: number8
   m_TagString: PhoneNumber
@@ -13341,7 +13489,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2113779891}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -13354,6 +13502,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2113779891}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &2113779898
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2113779891}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &2119996613
 GameObject:
   m_ObjectHideFlags: 0
