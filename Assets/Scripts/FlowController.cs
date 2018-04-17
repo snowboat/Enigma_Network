@@ -12,6 +12,7 @@ public class FlowController : MonoBehaviour {
 	public GameObject faciCanvas;
 	public GameObject[] scenes;
 	public AudioClip[] themeMusicForEachScene;
+	public AudioClip[] musicInUse;
 	public string[] monthForEachScene;
 	public int[] dayForEachScene;
 	public int[] hourForEachScene;
@@ -19,9 +20,6 @@ public class FlowController : MonoBehaviour {
 	public GameObject[] props;
 	public GameObject networkPrefab;
 	public AudioSource mainAudioSource;
-	public AudioClip characterMusic;
-	public AudioClip puzzleMusic;
-	public AudioClip sadMusic;
 	public AudioClip successSound;
 	private int currentScene = 0;
 

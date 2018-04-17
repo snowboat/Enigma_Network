@@ -20,6 +20,9 @@ public class PropsController : NetworkBehaviour {
 			clock.GetComponent<Clock>().SetDate(date);
 			clock.GetComponent<Clock>().SetTime(hour, min);
 		}
+		else {
+			Debug.Log("no radio");
+		}
 	}
 
 	// Send message to phone
@@ -101,7 +104,17 @@ public class PropsController : NetworkBehaviour {
     }
 
 	// Send message to radio
-	// [ClientRpc]
+	[ClientRpc]
+	public void RpcDisableRadio() {
+		Debug.Log("disable radio");
+		radio = GameObject.FindGameObjectWithTag("Radio");
+		if (radio != null) {
+			radio.GetComponent<Radio>().DisableRadio();
+		}
+		else {
+			Debug.Log("no radio");
+		}
+	}
     
 
 }
