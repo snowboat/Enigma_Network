@@ -105,6 +105,30 @@ public class PropsController : NetworkBehaviour {
 
 	// Send message to radio
 	[ClientRpc]
+	public void RpcSetRadioClip(int audioClipNumber) {
+		Debug.Log("set radio clip");
+		radio = GameObject.FindGameObjectWithTag("Radio");
+		if (radio != null) {
+			radio.GetComponent<Radio>().real_radio = audioInUse[audioClipNumber];
+		}
+		else {
+			Debug.Log("no radio");
+		}
+	}
+
+	[ClientRpc]
+	public void RpcActiveRadioChannel(int channel) {
+		Debug.Log("enable radio");
+		radio = GameObject.FindGameObjectWithTag("Radio");
+		if (radio != null) {
+			radio.GetComponent<Radio>().ActiveRadio(channel);
+		}
+		else {
+			Debug.Log("no radio");
+		}
+	}
+
+	[ClientRpc]
 	public void RpcDisableRadio() {
 		Debug.Log("disable radio");
 		radio = GameObject.FindGameObjectWithTag("Radio");

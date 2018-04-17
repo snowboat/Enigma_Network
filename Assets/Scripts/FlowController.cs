@@ -18,9 +18,9 @@ public class FlowController : MonoBehaviour {
 	public int[] hourForEachScene;
 	public int[] minForEachScene;
 	public GameObject[] props;
-	public GameObject networkPrefab;
+	// public GameObject networkPrefab;
 	public AudioSource mainAudioSource;
-	public AudioClip successSound;
+	public AudioSource successSoundSource;
 	private int currentScene = 0;
 
 	// Use this for initialization
@@ -50,7 +50,6 @@ public class FlowController : MonoBehaviour {
 
 	public void JoinAs(int num) {
 		networkPanel.SetActive(false);
-		// mainCamera.SetActive(false);
 		// set the camera for props
 		mainCamera.transform.position = cameraPositions[num].transform.position;
 		mainCamera.transform.rotation = cameraPositions[num].transform.rotation;
@@ -70,16 +69,24 @@ public class FlowController : MonoBehaviour {
 
 			// play theme song
 			if (currentScene < themeMusicForEachScene.Length && themeMusicForEachScene[currentScene]!=null) {
+				Debug.Log("next change music");
 				PlayBackgroundMusic(themeMusicForEachScene[currentScene]);
 			}
-			// change clock
-			if (currentScene < monthForEachScene.Length) {
-				networkPrefab.GetComponent<PropsController>().RpcSendTimeInfoToClock(monthForEachScene[currentScene], dayForEachScene[currentScene], hourForEachScene[currentScene], minForEachScene[currentScene]);
+
+			GameObject[] networkPrefabs = GameObject.FindGameObjectsWithTag("NetworkPrefab"); 
+
+			foreach (GameObject networkPrefab in networkPrefabs) {
+				// change clock
+				if (currentScene < monthForEachScene.Length) {
+					Debug.Log("next change clock");
+					networkPrefab.GetComponent<PropsController>().RpcSendTimeInfoToClock(monthForEachScene[currentScene], dayForEachScene[currentScene], hourForEachScene[currentScene], minForEachScene[currentScene]);
+				}
+				// disable phone
+				networkPrefab.GetComponent<PropsController>().RpcDisablePhone();
+				// disable radio
+				networkPrefab.GetComponent<PropsController>().RpcDisableRadio();
 			}
-			// disable phone
-			networkPrefab.GetComponent<PropsController>().RpcDisablePhone();
-			// disable radio
-			// TODO
+			
 		}
 	}
 
