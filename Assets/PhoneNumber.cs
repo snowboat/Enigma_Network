@@ -33,15 +33,6 @@ public class PhoneNumber : MonoBehaviour {
         phone.curNumberObject = this.gameObject;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "PhoneStop" && phone.curNumberObject == this.gameObject)
-        {
-            phone.reachStop = true;
-            Debug.Log(thisNumber);
-        }
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "PhoneStop" && phone.curNumberObject == this.gameObject)
