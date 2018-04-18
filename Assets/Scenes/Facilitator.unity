@@ -2491,6 +2491,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114863465415321708, guid: 050141536e834a44298bb201779c5083,
+        type: 2}
+      propertyPath: clipNumber
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 050141536e834a44298bb201779c5083, type: 2}
   m_IsPrefabParent: 0
