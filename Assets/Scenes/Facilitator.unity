@@ -2234,7 +2234,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &448392417
 Transform:
   m_ObjectHideFlags: 0
@@ -4658,7 +4658,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &784861152
 AudioListener:
   m_ObjectHideFlags: 0
@@ -7649,7 +7649,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1177934330
 Transform:
   m_ObjectHideFlags: 0
@@ -8280,7 +8280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radio_static: {fileID: 8300000, guid: 196220f426f10974382c0ce045b62e5a, type: 3}
-  real_radio: {fileID: 0}
+  real_radio: {fileID: 8300000, guid: 3e8a7c2cfe461f54fa879a06c38a7b59, type: 3}
   fake_radio01: {fileID: 8300000, guid: 7e4a8f813f3a9a24aa1f852baf63d7e6, type: 3}
   fake_radio02: {fileID: 8300000, guid: 7e4a8f813f3a9a24aa1f852baf63d7e6, type: 3}
   fake_radio03: {fileID: 8300000, guid: 7e4a8f813f3a9a24aa1f852baf63d7e6, type: 3}
@@ -9405,7 +9405,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1430376368
 Transform:
   m_ObjectHideFlags: 0
@@ -12544,6 +12544,22 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1bd893ebe77d2ae448055c75081bd7e8, type: 2}
+    - target: {fileID: 400010, guid: 27d14447184e54c3e82e7d52eff17472, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.3420201
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 27d14447184e54c3e82e7d52eff17472, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 27d14447184e54c3e82e7d52eff17472, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9396927
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 27d14447184e54c3e82e7d52eff17472, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 27d14447184e54c3e82e7d52eff17472, type: 3}
   m_IsPrefabParent: 0

@@ -17,7 +17,7 @@ public class Clock : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        curSec = 50;
+        curSec = 0;
         curMin = int.Parse(minText.text);
         curHour = int.Parse(hourText.text);
         curDate = int.Parse(dayText.text);
@@ -55,6 +55,7 @@ public class Clock : MonoBehaviour {
         startTime = Time.time;
         curHour = hour;
         curMin = min;
+        curSec = 0;
 
         if (hour < 10)
             hourText.text = "0" + curHour.ToString();

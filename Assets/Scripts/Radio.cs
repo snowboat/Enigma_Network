@@ -28,7 +28,6 @@ public class Radio : MonoBehaviour
     float radioChannel;
     bool radioSwitched = false;
     bool isStaticRadio = true;
-    Vector3 channelPos;
 
     // Use this for initialization
     void Start()
@@ -36,32 +35,52 @@ public class Radio : MonoBehaviour
         radio = GetComponent<AudioSource>();
 
         channelDisplay = GameObject.FindGameObjectWithTag("RadioChannel");
-        channelPos = channelDisplay.transform.localPosition;
 
         wheel = GameObject.FindGameObjectWithTag("RadioWheel");
         angleDis = wheel.GetComponent<Wheels>().maxAngle - wheel.GetComponent<Wheels>().minAngle;
         minAngle = wheel.GetComponent<Wheels>().minAngle;
         channelDis = channelPosMax - channelPosMin;
-      
-       // Debug.Log(channelRatio);
+
+        channelDisplay.transform.localPosition = new Vector3(0.86463f, 0.01075f, channelPosMax);
+
+        // Debug.Log(channelRatio);
 
         button = GameObject.FindGameObjectWithTag("RadioButton");
 
         radio01 = fake_radio01;
-        radio01 = fake_radio02;
+        radio02 = fake_radio02;
         radio03 = fake_radio03;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         wheelRotation = wheel.GetComponent<Wheels>().rotateAngle;
         channelRatio = (wheelRotation - minAngle) / angleDis;
 
         channelX = channelPosMax - channelDis * channelRatio;
-		channelDisplay.transform.localPosition = new Vector3(0.86463f, 0.01075f, channelX);
+        channelDisplay.transform.localPosition = new Vector3(0.86463f, 0.01075f, channelX);
 
-        if (channelRatio < 0.35 && channelRatio > 0.2)
+        switchChannel();
+    }
+    // Update is called once per frame
+    void Update()
+    {
+
+        if (button.GetComponent<tapableButton>().isPressed)
+        {
+            if (!radio.isPlaying)
+                radio.Play();
+        }
+        else
+        {
+            radio.Stop();
+        }
+    }
+
+    void switchChannel()
+    {
+
+        if (channelRatio < 0.25 && channelRatio > 0.1)
         {
             if (!radioSwitched)
             {
@@ -70,7 +89,7 @@ public class Radio : MonoBehaviour
                 isStaticRadio = false;
             }
         }
-        else if (channelRatio < 0.6 && channelRatio > 0.45)
+        else if (channelRatio < 0.45 && channelRatio > 0.3)
         {
             if (!radioSwitched)
             {
@@ -79,7 +98,7 @@ public class Radio : MonoBehaviour
                 isStaticRadio = false;
             }
         }
-        else if (channelRatio < 0.8 && channelRatio > 0.55)
+        else if (channelRatio < 0.8 && channelRatio > 0.65)
         {
             if (!radioSwitched)
             {
@@ -99,16 +118,7 @@ public class Radio : MonoBehaviour
             radioSwitched = false;
         }
 
-        if (button.GetComponent<tapableButton>().isPressed)
-        {
-            if (!radio.isPlaying)
-                radio.Play();
-        }
-        else
-        {
-            radio.Stop();
-        }
-
+        
     }
 
 
@@ -135,6 +145,8 @@ public class Radio : MonoBehaviour
             radio02 = real_radio;
         else if (id == 3)
             radio03 = real_radio;
+
+        switchChannel();
     }
 
     public void DisableRadio()
@@ -142,5 +154,7 @@ public class Radio : MonoBehaviour
         radio01 = fake_radio01;
         radio01 = fake_radio02;
         radio03 = fake_radio03;
+
+        switchChannel();
     }
 }
