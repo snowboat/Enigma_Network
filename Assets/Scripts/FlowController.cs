@@ -33,7 +33,6 @@ public class FlowController : MonoBehaviour {
 		if (scenes.Length > 0) {
 			for (int i = 0; i < scenes.Length; i++) {
 				scenes[i].SetActive(false);
-				scenes[0].SetActive(true);
 			}
 		}
 	}
@@ -41,6 +40,10 @@ public class FlowController : MonoBehaviour {
 	public void chooseFaci() {
 		selectCanvas.SetActive(false);
 		faciCanvas.SetActive(true);
+		// initiate first scene
+		scenes[currentScene].SetActive(true);
+
+		SetScene();
 	}
 
 	public void chooseProps() {
@@ -67,27 +70,24 @@ public class FlowController : MonoBehaviour {
 			}
 			scenes[currentScene].SetActive(true);
 
-			// play theme song
-			if (currentScene < themeMusicForEachScene.Length && themeMusicForEachScene[currentScene]!=null) {
-				Debug.Log("next change music");
-				PlayBackgroundMusic(themeMusicForEachScene[currentScene]);
-			}
-
-			GameObject[] networkPrefabs = GameObject.FindGameObjectsWithTag("NetworkPrefab"); 
-
-			foreach (GameObject networkPrefab in networkPrefabs) {
-				// change clock
-				if (currentScene < monthForEachScene.Length) {
-					Debug.Log("next change clock");
-					networkPrefab.GetComponent<PropsController>().RpcSendTimeInfoToClock(monthForEachScene[currentScene], dayForEachScene[currentScene], hourForEachScene[currentScene], minForEachScene[currentScene]);
-				}
-				// disable phone
-				networkPrefab.GetComponent<PropsController>().RpcDisablePhone();
-				// disable radio
-				networkPrefab.GetComponent<PropsController>().RpcDisableRadio();
-			}
-			
+			SetScene();
 		}
+	}
+
+	public void ChangeBackgroundMusic(int musicNumber) {
+		if (musicNumber < musicInUse.Length) {
+			Debug.Log("change background music");
+			PlayBackgroundMusic(musicInUse[musicNumber]);
+		} else {
+			Debug.Log("no music");
+		}
+	}
+
+	public void PlaySuccessSound() {
+		if (successSoundSource.isPlaying) {
+			successSoundSource.Stop();
+		}
+		successSoundSource.Play();
 	}
 
 	void PlayBackgroundMusic(AudioClip clip) {
@@ -96,5 +96,27 @@ public class FlowController : MonoBehaviour {
 		}
 		mainAudioSource.clip = clip;
 		mainAudioSource.Play();
+	}
+
+	void SetScene() {
+		// play theme song
+		if (currentScene < themeMusicForEachScene.Length && themeMusicForEachScene[currentScene]!=null) {
+			Debug.Log("next change music");
+			PlayBackgroundMusic(themeMusicForEachScene[currentScene]);
+		}
+
+		GameObject[] networkPrefabs = GameObject.FindGameObjectsWithTag("NetworkPrefab"); 
+
+		foreach (GameObject networkPrefab in networkPrefabs) {
+			// change clock
+			if (currentScene < monthForEachScene.Length) {
+				Debug.Log("next change clock");
+				networkPrefab.GetComponent<PropsController>().RpcSendTimeInfoToClock(monthForEachScene[currentScene], dayForEachScene[currentScene], hourForEachScene[currentScene], minForEachScene[currentScene]);
+			}
+			// disable phone
+			networkPrefab.GetComponent<PropsController>().RpcDisablePhone();
+			// disable radio
+			networkPrefab.GetComponent<PropsController>().RpcDisableRadio();
+		}
 	}
 }
