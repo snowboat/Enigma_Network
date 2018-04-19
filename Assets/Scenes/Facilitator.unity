@@ -4770,6 +4770,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 33ad3251526abbb42a5781fe31e080f5, type: 2}
+    - target: {fileID: 100066, guid: 7398dbf4e0fb57542b3ee9cb3b0487a1, type: 3}
+      propertyPath: m_TagString
+      value: Clock
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7398dbf4e0fb57542b3ee9cb3b0487a1, type: 3}
   m_IsPrefabParent: 0
@@ -5095,7 +5099,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &818675479
 Transform:
   m_ObjectHideFlags: 0
@@ -7831,7 +7835,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11400000, guid: 1c4dd8a13f501b04f84fe824120f70bb, type: 2}
       propertyPath: layers.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 1c4dd8a13f501b04f84fe824120f70bb, type: 2}
       propertyPath: m_LocalPosition.x
@@ -9955,7 +9959,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1476561407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9989,17 +9993,17 @@ MonoBehaviour:
   themeMusicForEachScene: []
   musicInUse: []
   monthForEachScene:
-  - NOV
-  - NONE
   - NONE
   - NOV
+  - NONE
+  - NOV
   - NOV
   - NOV
   - NOV
   - NOV
   - NONE
-  dayForEachScene: 0900000000000000000000000a0000000b0000000c0000000c0000000f00000000000000
-  hourForEachScene: 0a0000000000000000000000080000000e00000008000000100000001400000000000000
+  dayForEachScene: 0000000009000000000000000a0000000b0000000c0000000c0000000f00000000000000
+  hourForEachScene: 000000000a00000000000000080000000e00000008000000100000001400000000000000
   minForEachScene: 000000000000000000000000000000000000000000000000000000000000000000000000
   props:
   - {fileID: 818675478}
@@ -12544,7 +12548,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1944671096
 MonoBehaviour:
   m_ObjectHideFlags: 0

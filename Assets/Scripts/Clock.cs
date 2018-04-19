@@ -76,8 +76,9 @@ public class Clock : MonoBehaviour {
 
     public void SetTime(int hour, int min)
     {
-        clockAnim.SetTrigger("flipHr");
+       // clockAnim.SetTrigger("flipHr");
 
+        Debug.Log("111111");
         startTime = Time.time;
         curHour = hour;
         curMin = min;
@@ -95,12 +96,10 @@ public class Clock : MonoBehaviour {
 
     public void SetMonth(string mon)
     {
-        clockAnim.SetTrigger("flipMon");
 
         curMonth = mon;
         monthText.text = mon;
 
-        clockAnim.SetTrigger("flipMon");
     }
 
     public void SetDate(int date)
@@ -112,7 +111,5 @@ public class Clock : MonoBehaviour {
             dayText.text = "0" + date.ToString();
         else
             dayText.text = date.ToString();
-
-        clockAnim.SetTrigger("flipDay");
     }
 }
