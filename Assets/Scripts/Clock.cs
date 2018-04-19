@@ -13,6 +13,7 @@ public class Clock : MonoBehaviour {
     private string curMonth;
 
     private float startTime;
+    private int triggerAnimation = -1;
     private AudioSource clockAudio;
     private Animator clockAnim;
 
@@ -41,21 +42,60 @@ public class Clock : MonoBehaviour {
             {
                 curMin += (curSec / 60);
                 curSec = curSec % 60;
-                clockAudio.Play();
 
                 if (curMin >= 60)
                 {
                     curHour += (curMin / 60);
                     curMin = curMin % 60;
-                    clockAudio.Play();
 
-                    clockAnim.SetTrigger("flipHr");
+                    triggerAnimation = 2;
                 }
                 else
-                    clockAnim.SetTrigger("flipMin");
+                    triggerAnimation = 1;
             }
             internalSetTime(curHour, curMin);
         }
+
+        if (triggerAnimation > 0)
+            playAnimation();
+    }
+
+    private void updateText()
+    {
+        if (curHour < 10)
+            hourText.text = "0" + curHour.ToString();
+        else
+            hourText.text = curHour.ToString();
+        if (curMin < 10)
+            minText.text = "0" + curMin.ToString();
+        else
+            minText.text = curMin.ToString();
+        if (curDate < 10)
+            dayText.text = "0" + curDate.ToString();
+        else
+            dayText.text = curDate.ToString();
+
+        monthText.text = curMonth;
+    }
+
+    private void playAnimation()
+    {
+        if (triggerAnimation <= 0)
+            return;
+
+        Debug.Log(triggerAnimation);
+        if (triggerAnimation == 1)
+            clockAnim.SetTrigger("flipMin");
+        else if (triggerAnimation == 2)
+            clockAnim.SetTrigger("flipHr");
+        else if (triggerAnimation == 3)
+            clockAnim.SetTrigger("flipDay");
+        else if (triggerAnimation == 4)
+            clockAnim.SetTrigger("flipMon");
+
+        clockAudio.Play();
+
+        triggerAnimation = -1;
     }
 
     private void internalSetTime(int hour, int min)
@@ -64,52 +104,39 @@ public class Clock : MonoBehaviour {
         curHour = hour;
         curMin = min;
 
-        if (hour < 10)
-            hourText.text = "0" + curHour.ToString();
-        else
-            hourText.text = curHour.ToString();
-        if (min < 10)
-            minText.text = "0" + curMin.ToString();
-        else
-            minText.text = curMin.ToString();
+        Invoke("updateText", 3);
     }
 
     public void SetTime(int hour, int min)
     {
        // clockAnim.SetTrigger("flipHr");
-
-        Debug.Log("111111");
         startTime = Time.time;
         curHour = hour;
         curMin = min;
         curSec = 0;
 
-        if (hour < 10)
-            hourText.text = "0" + curHour.ToString();
-        else
-            hourText.text = curHour.ToString();
-        if (min < 10)
-            minText.text = "0" + curMin.ToString();
-        else
-            minText.text = curMin.ToString();
+        if (triggerAnimation <= 0)
+            triggerAnimation = 2;
+
+
+        Invoke("updateText", 3);
     }
 
     public void SetMonth(string mon)
     {
+        if (triggerAnimation <= 0)
+            triggerAnimation = 4;
 
         curMonth = mon;
-        monthText.text = mon;
-
+        Invoke("updateText", 3);
     }
 
     public void SetDate(int date)
     {
-        clockAnim.SetTrigger("flipDay");
+        if (triggerAnimation <= 0)
+            triggerAnimation = 3;
 
         curDate = date;
-        if (date < 10)
-            dayText.text = "0" + date.ToString();
-        else
-            dayText.text = date.ToString();
+        Invoke("updateText", 3);
     }
 }
