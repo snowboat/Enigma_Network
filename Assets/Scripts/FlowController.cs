@@ -109,7 +109,7 @@ public class FlowController : MonoBehaviour {
 
 		foreach (GameObject networkPrefab in networkPrefabs) {
 			// change clock
-			if (currentScene < monthForEachScene.Length) {
+			if (currentScene < monthForEachScene.Length && monthForEachScene[currentScene] != "NONE") {
 				Debug.Log("next change clock");
 				networkPrefab.GetComponent<PropsController>().RpcSendTimeInfoToClock(monthForEachScene[currentScene], dayForEachScene[currentScene], hourForEachScene[currentScene], minForEachScene[currentScene]);
 			}
