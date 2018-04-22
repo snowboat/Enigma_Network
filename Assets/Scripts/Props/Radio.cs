@@ -152,7 +152,7 @@ public class Radio : MonoBehaviour
     public void DisableRadio()
     {
         radio01 = fake_radio01;
-        radio01 = fake_radio02;
+        radio02 = fake_radio02;
         radio03 = fake_radio03;
 
         switchChannel();

@@ -112,7 +112,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114002406133632122, guid: 96eb28aae3ce8084c9e3504b7c7dd15f,
+          type: 2}
         m_MethodName: ChangeBackgroundMusic
         m_Mode: 3
         m_Arguments:
