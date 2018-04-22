@@ -149,6 +149,11 @@ public class PhoneWheel : MonoBehaviour {
     private void transformedHandler(object sender, System.EventArgs e)
     {
         // Debug.Log(gesture.DeltaRotation);
+        if (gesture.DeltaRotation < 0)
+            this.GetComponent<Transformer>().enabled = false;
+        else if (!reachStop)
+            this.GetComponent<Transformer>().enabled = true;
+
         if (gesture.DeltaRotation > 0 && !addedNumber)
         {
             rotateAngle += Time.deltaTime * rotateSpeed;
