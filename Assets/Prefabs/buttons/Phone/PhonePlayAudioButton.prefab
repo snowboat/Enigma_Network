@@ -170,7 +170,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Call Churchill
+  m_Text: Phone Audio
 --- !u!222 &222768661092545100
 CanvasRenderer:
   m_ObjectHideFlags: 1
