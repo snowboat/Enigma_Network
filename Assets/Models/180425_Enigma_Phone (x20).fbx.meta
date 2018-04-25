@@ -1,0 +1,183 @@
+fileFormatVersion: 2
+guid: 8e6a51e228d66a9408dc0aa7d1e2c2e0
+timeCreated: 1524681157
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Phone_LogoPlate
+    100004: Phone_Number
+    100006: Phone_Number0
+    100008: Phone_Number1
+    100010: Phone_Number2
+    100012: Phone_Number3
+    100014: Phone_Number4
+    100016: Phone_Number5
+    100018: Phone_Number6
+    100020: Phone_Number7
+    100022: Phone_Number8
+    100024: Phone_Number9
+    100026: Phone_Stop
+    100028: Phone_Surface
+    100030: Phone_Wheel
+    100032: Phone_WheelBase
+    100034: Phone_WheelCenter
+    400000: //RootNode
+    400002: Phone_LogoPlate
+    400004: Phone_Number
+    400006: Phone_Number0
+    400008: Phone_Number1
+    400010: Phone_Number2
+    400012: Phone_Number3
+    400014: Phone_Number4
+    400016: Phone_Number5
+    400018: Phone_Number6
+    400020: Phone_Number7
+    400022: Phone_Number8
+    400024: Phone_Number9
+    400026: Phone_Stop
+    400028: Phone_Surface
+    400030: Phone_Wheel
+    400032: Phone_WheelBase
+    400034: Phone_WheelCenter
+    2100000: lambert1
+    2100002: typeBlinn15
+    2100004: typeBlinn6
+    2100006: typeBlinn7
+    2100008: typeBlinn8
+    2100010: typeBlinn9
+    2100012: typeBlinn10
+    2100014: typeBlinn11
+    2100016: typeBlinn12
+    2100018: typeBlinn13
+    2100020: typeBlinn14
+    2300000: Phone_LogoPlate
+    2300002: Phone_Number0
+    2300004: Phone_Number1
+    2300006: Phone_Number2
+    2300008: Phone_Number3
+    2300010: Phone_Number4
+    2300012: Phone_Number5
+    2300014: Phone_Number6
+    2300016: Phone_Number7
+    2300018: Phone_Number8
+    2300020: Phone_Number9
+    2300022: Phone_Stop
+    2300024: Phone_Surface
+    2300026: Phone_Wheel
+    2300028: Phone_WheelBase
+    2300030: Phone_WheelCenter
+    3300000: Phone_LogoPlate
+    3300002: Phone_Number0
+    3300004: Phone_Number1
+    3300006: Phone_Number2
+    3300008: Phone_Number3
+    3300010: Phone_Number4
+    3300012: Phone_Number5
+    3300014: Phone_Number6
+    3300016: Phone_Number7
+    3300018: Phone_Number8
+    3300020: Phone_Number9
+    3300022: Phone_Stop
+    3300024: Phone_Surface
+    3300026: Phone_Wheel
+    3300028: Phone_WheelBase
+    3300030: Phone_WheelCenter
+    4300000: Phone_WheelCenter
+    4300002: Phone_Stop
+    4300004: Phone_LogoPlate
+    4300006: Phone_Wheel
+    4300008: Phone_WheelBase
+    4300010: Phone_Number0
+    4300012: Phone_Number1
+    4300014: Phone_Number2
+    4300016: Phone_Number3
+    4300018: Phone_Number4
+    4300020: Phone_Number5
+    4300022: Phone_Number6
+    4300024: Phone_Number7
+    4300026: Phone_Number8
+    4300028: Phone_Number9
+    4300030: Phone_Surface
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

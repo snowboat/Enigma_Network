@@ -29,22 +29,26 @@ public class Wheels : MonoBehaviour {
 
     private void transformedHandler(object sender, System.EventArgs e)
     {
-       // Debug.Log(gesture.DeltaRotation);
+        Debug.Log(gesture.DeltaRotation);
         if (gesture.DeltaRotation < 0)
             rotateAngle += Time.deltaTime * rotateSpeed;
         else
             rotateAngle -= Time.deltaTime * rotateAngle;
 
-        rotateAngle = Mathf.Min(maxAngle, Mathf.Max(minAngle, rotateAngle));
-		transform.localEulerAngles = new Vector3(0, rotateAngle, 0);
+        if (rotateAngle <= minAngle || rotateAngle >= maxAngle)
+            this.GetComponent<Transformer>().enabled = false;
+        else
+            this.GetComponent<Transformer>().enabled = true;
 
+        rotateAngle = Mathf.Min(maxAngle, Mathf.Max(minAngle, rotateAngle));
+        //transform.localEulerAngles = new Vector3(0, rotateAngle, 0);
 
         playWheelSound();
     }
 
     void playWheelSound()
     {
-        if (this.tag == "ObjectWheel" && !sound.isPlaying)
+        if (!sound.isPlaying)
             sound.Play();
     }
 

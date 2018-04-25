@@ -39,6 +39,7 @@ public class PhoneWheel : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        Application.targetFrameRate = 60;
         phone = GetComponent<AudioSource>();
 	}
 
