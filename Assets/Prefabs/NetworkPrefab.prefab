@@ -85,6 +85,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioInUse:
-  - {fileID: 8300000, guid: 4067cab64f561504980def240454fd79, type: 3}
-  - {fileID: 8300000, guid: ac4ed2f4c0519794fae1f8da8c00b228, type: 3}
+  - {fileID: 8300000, guid: 50cd621ca58c57e4db0e42ddc0b99613, type: 3}
+  - {fileID: 8300000, guid: d8dd31ca2b256ab449725da112c6accb, type: 3}
+  - {fileID: 8300000, guid: c7c0ebdc0c5594846b54832c65bb5821, type: 3}
   - {fileID: 8300000, guid: f1925a0b745702d43adbba8a7e3706d7, type: 3}
