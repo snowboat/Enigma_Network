@@ -74,8 +74,8 @@ GameObject:
   - component: {fileID: 23610422944662722}
   - component: {fileID: 64347490938376848}
   - component: {fileID: 114441956426205964}
-  - component: {fileID: 114843795868134862}
   - component: {fileID: 114246881507185728}
+  - component: {fileID: 114843795868134862}
   - component: {fileID: 82805161660172402}
   m_Layer: 0
   m_Name: Radio_Knob
@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 65646228636890802}
   - component: {fileID: 114817988771580576}
   - component: {fileID: 114914148624612376}
+  - component: {fileID: 82851802803279502}
   m_Layer: 0
   m_Name: Radio_Switch
   m_TagString: RadioButton
@@ -270,13 +271,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1457531178206096}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.12186928, w: 0.9925462}
   m_LocalPosition: {x: -0.8134791, y: 0.04376339, z: 0.53169155}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4860655883202120}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 14}
 --- !u!4 &4860655883202120
 Transform:
   m_ObjectHideFlags: 1
@@ -742,7 +743,87 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1de98949beb7c3745914fca231789cf5, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!82 &82851802803279502
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1457531178206096}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e96442288d82bda4a90ff3327ad18d7c, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -968,7 +1049,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minAngle: 40
   maxAngle: 320
-  rotateSpeed: 100
   rotateAngle: 0
 --- !u!114 &114914148624612376
 MonoBehaviour:
@@ -981,5 +1061,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa75e7bdd533a204b9575ff666321a1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: {x: 0, y: 0, z: -30}
-  isPressed: 0
+  buttonTransform: {x: 0, y: 0, z: -28}
+  isPressed: 1

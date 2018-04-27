@@ -10,7 +10,6 @@ public class Wheels : MonoBehaviour {
     private AudioSource sound;
     public float minAngle = 40;
     public float maxAngle = 320;
-    public float rotateSpeed = 100.0f;
 
     public float rotateAngle;
 
@@ -18,6 +17,12 @@ public class Wheels : MonoBehaviour {
     {
         gesture = GetComponent<PinnedTransformGesture>();
         gesture.Transformed += transformedHandler;
+
+        rotateAngle = transform.localEulerAngles.y;
+        if (rotateAngle < minAngle)
+            transform.localEulerAngles = new Vector3(0, minAngle, 0);
+        else if (rotateAngle > maxAngle)
+            transform.localEulerAngles = new Vector3(0, maxAngle, 0);
 
         rotateAngle = transform.localEulerAngles.y;
     }
@@ -29,19 +34,17 @@ public class Wheels : MonoBehaviour {
 
     private void transformedHandler(object sender, System.EventArgs e)
     {
-        Debug.Log(gesture.DeltaRotation);
-        if (gesture.DeltaRotation < 0)
-            rotateAngle += Time.deltaTime * rotateSpeed;
-        else
-            rotateAngle -= Time.deltaTime * rotateAngle;
+        rotateAngle = transform.localEulerAngles.y;
 
         if (rotateAngle <= minAngle || rotateAngle >= maxAngle)
             this.GetComponent<Transformer>().enabled = false;
-        else
+        
+        if (rotateAngle <= minAngle && gesture.DeltaRotation < 0 && !this.GetComponent<Transformer>().enabled)
+            this.GetComponent<Transformer>().enabled = true;
+        if (rotateAngle >= minAngle && gesture.DeltaRotation > 0 && !this.GetComponent<Transformer>().enabled)
             this.GetComponent<Transformer>().enabled = true;
 
-        rotateAngle = Mathf.Min(maxAngle, Mathf.Max(minAngle, rotateAngle));
-        //transform.localEulerAngles = new Vector3(0, rotateAngle, 0);
+            rotateAngle = Mathf.Min(maxAngle, Mathf.Max(minAngle, rotateAngle));
 
         playWheelSound();
     }

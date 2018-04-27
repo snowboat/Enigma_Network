@@ -4,7 +4,7 @@ using UnityEngine;
 using TouchScript.Gestures;
 
 public class tapableButton : MonoBehaviour {
-    public Vector3 movement;
+    public Vector3 buttonTransform;
 
     private TapGesture gesture;
     Vector3 startPosition, endPosition;
@@ -14,7 +14,7 @@ public class tapableButton : MonoBehaviour {
     // Use this for initialization
     void Start() {
 		startPosition = this.transform.localEulerAngles;
-        endPosition = new Vector3(startPosition.x + movement.x, startPosition.y + movement.y, startPosition.z + movement.z);
+        endPosition = new Vector3(startPosition.x + buttonTransform.x, startPosition.y + buttonTransform.y, startPosition.z + buttonTransform.z);
         isPressed = false;
 
         sound = GetComponent<AudioSource>();
