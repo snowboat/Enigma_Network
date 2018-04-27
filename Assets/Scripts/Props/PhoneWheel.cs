@@ -47,8 +47,7 @@ public class PhoneWheel : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        //  Debug.Log(gesture.ScreenPosition);
-        //Debug.Log(curNumber);
+
         addDigit();
 
         if (gesture.State == TouchScript.Gestures.Gesture.GestureState.Changed && !gestureChanged)
