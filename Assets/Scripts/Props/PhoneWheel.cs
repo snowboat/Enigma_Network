@@ -23,13 +23,9 @@ public class PhoneWheel : MonoBehaviour {
     private float stopTime = -1;
 
     public string targetNumber = "000000";
-    public int curNumber = -1;
-    public GameObject curNumberObject;
-    public bool reachStop = false;
+    
     public float waitCallTime = 5;
-    public float rotateSpeed = 100.0f;
     public float resetSpeed = 30.0f;
-    public Vector2 presetDialDir;
 
     AudioSource phone;
     public AudioClip dialing;
@@ -37,9 +33,14 @@ public class PhoneWheel : MonoBehaviour {
     public AudioClip phone1;
     public AudioClip phoneRing;
 
+    public int curNumber = -1;
+    public GameObject curNumberObject;
+    public bool reachStop = false;
+
     // Use this for initialization
     void Start () {
         Application.targetFrameRate = 60;
+
         phone = GetComponent<AudioSource>();
 	}
 
@@ -157,7 +158,8 @@ public class PhoneWheel : MonoBehaviour {
 
         if (gesture.DeltaRotation > 0 && !addedNumber)
         {
-            rotateAngle += Time.deltaTime * rotateSpeed;
+           // rotateAngle += Time.deltaTime * rotateSpeed;
+            rotateAngle = transform.localEulerAngles.y;
             DialPhone();
         }
 

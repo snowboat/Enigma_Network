@@ -56,7 +56,7 @@ public class PropsController : NetworkBehaviour {
         Debug.Log("set phone clip");
 		phone = GameObject.FindGameObjectWithTag("PhoneWheel");
 		if (phone != null) {
-			phone.GetComponent<AudioSource>().clip = audioInUse[audioClipNumber];
+			phone.GetComponent<PhoneWheel>().phone1 = audioInUse[audioClipNumber];
 		}
 		else {
 			Debug.Log("no phone");
