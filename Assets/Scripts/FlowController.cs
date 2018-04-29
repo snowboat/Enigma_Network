@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FlowController : MonoBehaviour {
 
@@ -20,6 +21,8 @@ public class FlowController : MonoBehaviour {
 	public GameObject[] props;
 	// public GameObject networkPrefab;
 	public AudioSource mainAudioSource;
+	private bool switchOfMainAudioSource = true;
+	public Text signOfMainAudioSource;
 	public AudioSource successSoundSource;
 	private int currentScene = 0;
 
@@ -117,6 +120,18 @@ public class FlowController : MonoBehaviour {
 			networkPrefab.GetComponent<PropsController>().RpcDisablePhone();
 			// disable radio
 			networkPrefab.GetComponent<PropsController>().RpcDisableRadio();
+		}
+	}
+
+	public void turnMusic() {
+		if (switchOfMainAudioSource) {
+			mainAudioSource.volume = 0;
+			signOfMainAudioSource.text = "Music\nOff";
+			switchOfMainAudioSource = false;
+		} else {
+			mainAudioSource.volume = 1;
+			signOfMainAudioSource.text = "Music\nOn";
+			switchOfMainAudioSource = true;
 		}
 	}
 }
