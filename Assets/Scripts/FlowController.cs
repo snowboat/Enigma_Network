@@ -96,14 +96,18 @@ public class FlowController : MonoBehaviour {
 	void PlayBackgroundMusic(AudioClip clip) {
 		if (mainAudioSource.isPlaying) {
 			mainAudioSource.Stop();
+			Debug.Log("stop the music");
 		}
-		mainAudioSource.clip = clip;
-		mainAudioSource.Play();
+		if (clip!=null) {
+			mainAudioSource.clip = clip;
+			mainAudioSource.Play();
+			Debug.Log("change the music");
+		}
 	}
 
 	void SetScene() {
 		// play theme song
-		if (currentScene < themeMusicForEachScene.Length && themeMusicForEachScene[currentScene]!=null) {
+		if (currentScene < themeMusicForEachScene.Length) {
 			Debug.Log("next change music");
 			PlayBackgroundMusic(themeMusicForEachScene[currentScene]);
 		}
