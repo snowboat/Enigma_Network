@@ -29,7 +29,6 @@ public class Radio : MonoBehaviour
     bool radioSwitched = false;
     bool isStaticRadio = true;
 
-    // Use this for initialization
     void Start()
     {
         radio = GetComponent<AudioSource>();

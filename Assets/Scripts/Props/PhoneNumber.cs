@@ -6,14 +6,13 @@ using TouchScript.Gestures;
 public class PhoneNumber : MonoBehaviour {
     private PressGesture gesture;
     private PhoneWheel phone;
-    private GameObject phoneStop;
-
+       
+    // The digit of this game object
     public int thisNumber;
 
     private void Start()
     {
         phone = GameObject.FindGameObjectWithTag("PhoneWheel").GetComponent<PhoneWheel>();
-        phoneStop = GameObject.FindGameObjectWithTag("PhoneStop");
     }
 
     private void OnEnable()
@@ -33,12 +32,14 @@ public class PhoneNumber : MonoBehaviour {
         phone.curNumberObject = this.gameObject;
     }
 
+    // Reach the phone stop
     private void OnTriggerEnter(Collider other)
     {
+        // Check whether the colliding object is the phonestop
+        // and whether this game object is the one that player is pressing on
         if (other.tag == "PhoneStop" && phone.curNumberObject == this.gameObject)
         {
             phone.reachStop = true;
-            Debug.Log(thisNumber);
         }
     }
 }
