@@ -8,9 +8,11 @@ public class Wheels : MonoBehaviour {
     private PinnedTransformGesture gesture;
     private Transformer transformer;
     private AudioSource sound;
+
+    // Max and min angle the radio's wheel can turn
     public float minAngle = 40;
     public float maxAngle = 320;
-
+    // Wheel's current rotation
     public float rotateAngle;
 
     private void OnEnable()
@@ -19,6 +21,7 @@ public class Wheels : MonoBehaviour {
         gesture.Transformed += transformedHandler;
 
         rotateAngle = transform.localEulerAngles.y;
+        // Set the wheel's start transformation within angle range
         if (rotateAngle < minAngle)
             transform.localEulerAngles = new Vector3(0, minAngle, 0);
         else if (rotateAngle > maxAngle)
@@ -36,6 +39,7 @@ public class Wheels : MonoBehaviour {
     {
         rotateAngle = transform.localEulerAngles.y;
 
+        // Force the wheel to stop at the min or max rotaion
         if (rotateAngle <= minAngle || rotateAngle >= maxAngle)
             this.GetComponent<Transformer>().enabled = false;
         
@@ -44,7 +48,8 @@ public class Wheels : MonoBehaviour {
         if (rotateAngle >= minAngle && gesture.DeltaRotation > 0 && !this.GetComponent<Transformer>().enabled)
             this.GetComponent<Transformer>().enabled = true;
 
-            rotateAngle = Mathf.Min(maxAngle, Mathf.Max(minAngle, rotateAngle));
+        // Update the rotateAngle to prevent it from exceeding the angle range
+        rotateAngle = Mathf.Min(maxAngle, Mathf.Max(minAngle, rotateAngle));
 
         playWheelSound();
     }
@@ -55,12 +60,10 @@ public class Wheels : MonoBehaviour {
             sound.Play();
     }
 
-    // Use this for initialization
     void Start () {
         sound = GetComponent<AudioSource>();
     }
 	
-	// Update is called once per frame
 	void Update () {
 	}
 }

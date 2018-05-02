@@ -4,6 +4,7 @@ using UnityEngine;
 using TouchScript.Gestures;
 
 public class tapableButton : MonoBehaviour {
+    // Transforms for button's on/off status
     public Vector3 buttonTransform;
 
     private TapGesture gesture;
@@ -11,18 +12,14 @@ public class tapableButton : MonoBehaviour {
     public bool isPressed;
     AudioSource sound;
 
-    // Use this for initialization
     void Start() {
+        // Transform for off status
 		startPosition = this.transform.localEulerAngles;
+        // For on status
         endPosition = new Vector3(startPosition.x + buttonTransform.x, startPosition.y + buttonTransform.y, startPosition.z + buttonTransform.z);
         isPressed = false;
 
         sound = GetComponent<AudioSource>();
-    }
-
-    // Update is called once per frame
-    void Update() {
-
     }
 
     private void OnEnable()
@@ -45,7 +42,6 @@ public class tapableButton : MonoBehaviour {
         }
         else
         {
-            //this.transform.position = startPosition;
 			this.transform.localEulerAngles = startPosition;
             isPressed = false;
         }
@@ -54,6 +50,7 @@ public class tapableButton : MonoBehaviour {
         playButtonSound();
     }
 
+    // Turn on/off the radio through facilitator's App
     public void RemoteToggleButton()
     {
 		if (!isPressed)
@@ -63,7 +60,6 @@ public class tapableButton : MonoBehaviour {
 		}
 		else
 		{
-			//this.transform.position = startPosition;
 			this.transform.localEulerAngles = startPosition;
 			isPressed = false;
 		}
@@ -71,9 +67,9 @@ public class tapableButton : MonoBehaviour {
         playButtonSound();
     }
 
+    // Sound effect for tapping on buttion
     private void playButtonSound()
     {
-        // Check tag in case of having multiple types of buttons
         if (this.gameObject.tag == "RadioButton")
             sound.Play();
     }
