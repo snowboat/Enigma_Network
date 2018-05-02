@@ -2516,7 +2516,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &448392417
 Transform:
   m_ObjectHideFlags: 0
@@ -2746,7 +2746,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &480504083
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5704,6 +5704,11 @@ Prefab:
         type: 2}
       propertyPath: clipNumber
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114766452411137716, guid: 0186c0ddd60bf25469c94eb706c698d6,
+        type: 2}
+      propertyPath: phoneNumber
+      value: 0147
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0186c0ddd60bf25469c94eb706c698d6, type: 2}
@@ -9325,7 +9330,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1430376368
 Transform:
   m_ObjectHideFlags: 0
@@ -9870,7 +9875,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1532493419
 AudioListener:
   m_ObjectHideFlags: 0
@@ -12588,7 +12593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2050604814
 RectTransform:
   m_ObjectHideFlags: 0

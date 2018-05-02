@@ -8,7 +8,7 @@ public class PhonePlayAudio : MonoBehaviour {
 
 	public void PlayAudio() {
 		GameObject[] networkPrefabs = GameObject.FindGameObjectsWithTag("NetworkPrefab"); 
-		Debug.Log("button set radio");
+		Debug.Log("button phone play audio");
 
 		foreach (GameObject networkPrefab in networkPrefabs) {
 			networkPrefab.GetComponent<PropsController>().RpcPhonePlayClip(clipNumber);
