@@ -6,30 +6,36 @@ public class Radio : MonoBehaviour
 {
 
     AudioSource radio;
+    // The ambient sound 
     public AudioClip radio_static;
-
+    // Audio contains important informtaion
     public AudioClip real_radio;
-
+    // Audios contain not important information
     public AudioClip fake_radio01;
     public AudioClip fake_radio02;
     public AudioClip fake_radio03;
 
+    // Place to carry the current three sound clips that the radio is using
     public AudioClip radio01;
     public AudioClip radio02;
     public AudioClip radio03;
 
+    // Max and min position of the redline
     public float channelPosMin, channelPosMax;
     private float angleDis, channelDis, minAngle, channelRatio, channelX;
 
+    // Red line
     GameObject channelDisplay;
+    // Radio's wheel
     GameObject wheel;
+    // Radio's switch
     GameObject button;
+
     float wheelRotation;
     float radioChannel;
     bool radioSwitched = false;
     bool isStaticRadio = true;
 
-    // Use this for initialization
     void Start()
     {
         radio = GetComponent<AudioSource>();
@@ -41,9 +47,8 @@ public class Radio : MonoBehaviour
         minAngle = wheel.GetComponent<Wheels>().minAngle;
         channelDis = channelPosMax - channelPosMin;
 
+        // Initialize the red line's position
         channelDisplay.transform.localPosition = new Vector3(0.86463f, 0.01075f, channelPosMax);
-
-        // Debug.Log(channelRatio);
 
         button = GameObject.FindGameObjectWithTag("RadioButton");
 
@@ -55,8 +60,11 @@ public class Radio : MonoBehaviour
     private void FixedUpdate()
     {
         wheelRotation = wheel.GetComponent<Wheels>().rotateAngle;
+
+        // Use ratio to check whether the readio is at a target frequency
         channelRatio = (wheelRotation - minAngle) / angleDis;
 
+        // Red line's position
         channelX = channelPosMax - channelDis * channelRatio;
         channelDisplay.transform.localPosition = new Vector3(0.86463f, 0.01075f, channelX);
 
@@ -65,7 +73,6 @@ public class Radio : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (button.GetComponent<tapableButton>().isPressed)
         {
             if (!radio.isPlaying)
@@ -79,7 +86,6 @@ public class Radio : MonoBehaviour
 
     void switchChannel()
     {
-
         if (channelRatio < 0.25 && channelRatio > 0.1)
         {
             if (!radioSwitched)
@@ -121,7 +127,7 @@ public class Radio : MonoBehaviour
         
     }
 
-
+    // Turn radio on or off through the facilitator's App
     public void RemoteToggelRadio()
     {
         Debug.Log("receive access through outside");
@@ -137,6 +143,7 @@ public class Radio : MonoBehaviour
         }
     }
 
+    // Set one of the frenquency carry the important radio message
     public void ActiveRadio(int id)
     {
         if (id == 1)
@@ -149,6 +156,7 @@ public class Radio : MonoBehaviour
         switchChannel();
     }
 
+    // Set all of the frequencies carry not important radio message
     public void DisableRadio()
     {
         radio01 = fake_radio01;

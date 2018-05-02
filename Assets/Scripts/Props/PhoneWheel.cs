@@ -17,7 +17,7 @@ public class PhoneWheel : MonoBehaviour {
     bool addedNumber = false;
     private string number = "";
 
-    private Vector2 curDir, pos, wheelCenter, dialDir, startDir;
+    private Vector2 curDir, pos, wheelCenter, dialDir;
     private float dotProduct;
 
     private float stopTime = -1;
@@ -30,6 +30,7 @@ public class PhoneWheel : MonoBehaviour {
     AudioSource phone;
     public AudioClip dialing;
     public AudioClip wrongNumber;
+    // The audio clip for the right number
     public AudioClip phone1;
     public AudioClip phoneRing;
 
@@ -39,6 +40,7 @@ public class PhoneWheel : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        // Set a higher framerate to have a better physics test
         Application.targetFrameRate = 60;
 
         phone = GetComponent<AudioSource>();
@@ -48,34 +50,42 @@ public class PhoneWheel : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
+        // Check whether the player dialed a new digit
         addDigit();
 
+        // Player starts dailing
         if (gesture.State == TouchScript.Gestures.Gesture.GestureState.Changed && !gestureChanged)
         {
             gestureChanged = true;
         }
 
+        // The dailing stops
         if (gestureChanged && gesture.State == TouchScript.Gestures.Gesture.GestureState.Idle)
         {
             resetWheel = true;
             gestureChanged = false;
 
-            resetSpeed = Mathf.Max(100.0f, rotateAngle * 2f);
+            // If the rotate angle is too big, speed up the wheel
+            resetSpeed = Mathf.Max(resetSpeed, rotateAngle * 2f);
             wheelAngleY = rotateAngle;
+
+            // Process that reset the wheel's transformation
             StartCoroutine(ResetWheel());
+
             resetWheel = false;
             addedNumber = false;
             reachStop = false;
             rotateAngle = 0.0f;
             curNumber = -1;
 
+            // Allow the wheel to rotated by player
             this.GetComponent<Transformer>().enabled = true;
 
+            // Record the time that player stop dailing
             stopTime = Time.realtimeSinceStartup;
-            startDir = new Vector2(-5, -5);
         }
 
-
+        // Check whether the number we have is the target number
         if (number.Length > 0 && stopTime > 0 && Time.realtimeSinceStartup - stopTime > waitCallTime && gesture.State == TouchScript.Gestures.Gesture.GestureState.Idle)
         {
             Debug.Log("Times up. Check number");
@@ -95,6 +105,7 @@ public class PhoneWheel : MonoBehaviour {
         }
 	}
 
+    // Sound for dialing the phone wheel
     private void DialPhone()
     {
         phone.clip = dialing;
@@ -106,21 +117,24 @@ public class PhoneWheel : MonoBehaviour {
     {
         if (callNumber == "xxx")
             phone.clip = wrongNumber;
+
         else if (callNumber == targetNumber)
             phone.clip = phone1;
 
         phone.Play();
     }
 
-    private bool addDigit()
+    private void addDigit()
     {
+        // Phone wheel is not moved, return
         if (!gestureChanged)
-            return false;
+            return;
 
         if (reachStop)
         {
-            // Debug.Log(dotProduct);
+            // Stop the phone wheel
             this.GetComponent<Transformer>().enabled = false;
+            // Update the number with the new digit
             if (!addedNumber && curNumber >= 0)
             {
                 addedNumber = true;
@@ -128,10 +142,7 @@ public class PhoneWheel : MonoBehaviour {
                 curNumber = -1;
                 Debug.Log("Update number: " + number);
             }
-            return true;
         }  
-
-        return false;
     }
 
     private void OnEnable()
@@ -149,7 +160,7 @@ public class PhoneWheel : MonoBehaviour {
 
     private void transformedHandler(object sender, System.EventArgs e)
     {
-        // Debug.Log(gesture.DeltaRotation);
+        // Phone wheel cannot be rotated in the opposite direction
         if (gesture.DeltaRotation < 0)
             this.GetComponent<Transformer>().enabled = false;
         else if (!reachStop)
@@ -157,19 +168,15 @@ public class PhoneWheel : MonoBehaviour {
 
         if (gesture.DeltaRotation > 0 && !addedNumber)
         {
-           // rotateAngle += Time.deltaTime * rotateSpeed;
             rotateAngle = transform.localEulerAngles.y;
+            // Play the sound effect for dailing the phone
             DialPhone();
         }
-
-        //rotateAngle = Mathf.Min(maxAngle, Mathf.Max(minAngle, rotateAngle));
-        //rotateAngle = rotateAngle % 360;
-        //transform.localEulerAngles = new Vector3(0, rotateAngle, 0);
     }
 
+    // Reset phone wheel's transformation
     private IEnumerator ResetWheel()
     {
-       // Debug.Log(this.transform.localEulerAngles.y);
         while (wheelAngleY > 0)
         {
             wheelAngleY -= Time.deltaTime * resetSpeed;
