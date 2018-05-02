@@ -3422,7 +3422,7 @@ MonoBehaviour:
   resetSpeed: 30
   dialing: {fileID: 8300000, guid: 4efa4cba4d32b9948ad39b18d6b0d22b, type: 3}
   wrongNumber: {fileID: 8300000, guid: 7e02166212c7ec24394fdec005b899a8, type: 3}
-  phone1: {fileID: 8300000, guid: 91e2b9787cf7fe342be10dc3d72bda94, type: 3}
+  phone1: {fileID: 0}
   phoneRing: {fileID: 8300000, guid: d195427b72c19b74abc1f2dd58008ee0, type: 3}
   curNumber: -1
   curNumberObject: {fileID: 0}

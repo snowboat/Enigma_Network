@@ -48,7 +48,7 @@ public class Radio : MonoBehaviour
         channelDis = channelPosMax - channelPosMin;
 
         // Initialize the red line's position
-        channelDisplay.transform.localPosition = new Vector3(0.86463f, 0.01075f, channelPosMax);
+        channelDisplay.transform.localPosition = new Vector3(0.86463f, -0.03244f, channelPosMax);
 
         button = GameObject.FindGameObjectWithTag("RadioButton");
 

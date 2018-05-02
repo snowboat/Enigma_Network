@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PhoneRandomPlayAudio : MonoBehaviour {
+public class PhonePlayRandomAudio : MonoBehaviour {
 
 	public int firstClipNumber;
 	public int lastClipNumber;
