@@ -24,6 +24,10 @@ public class FlowController : MonoBehaviour {
 	private bool switchOfMainAudioSource = true;
 	public Text signOfMainAudioSource;
 	public AudioSource successSoundSource;
+	public GameObject musicOnButton;
+	public GameObject musicOffButton;
+	public GameObject musicPanel;
+	
 	private int currentScene = 0;
 
 	// Use this for initialization
@@ -32,6 +36,9 @@ public class FlowController : MonoBehaviour {
 		selectPanel.SetActive(true);
 		networkPanel.SetActive(false);
 		faciCanvas.SetActive(false);
+		musicPanel.SetActive(true);
+		musicOnButton.SetActive(true);
+		musicOffButton.SetActive(false);
 		// Set the active state of scenes in faci canvas
 		if (scenes.Length > 0) {
 			for (int i = 0; i < scenes.Length; i++) {
@@ -127,6 +134,7 @@ public class FlowController : MonoBehaviour {
 		}
 	}
 
+	/*
 	public void turnMusic() {
 		if (switchOfMainAudioSource) {
 			mainAudioSource.volume = 0;
@@ -137,5 +145,18 @@ public class FlowController : MonoBehaviour {
 			signOfMainAudioSource.text = "Music\nOn";
 			switchOfMainAudioSource = true;
 		}
+	}
+	*/
+
+	public void turnOnMusic() {
+		musicOnButton.SetActive(true);
+		mainAudioSource.volume = 1;
+		musicOffButton.SetActive(false);
+	}
+
+	public void turnOffMusic() {
+		musicOffButton.SetActive(true);
+		mainAudioSource.volume = 0;
+		musicOnButton.SetActive(false);
 	}
 }

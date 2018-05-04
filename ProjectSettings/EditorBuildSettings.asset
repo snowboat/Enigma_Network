@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/PhysicalTest.unity
-    guid: 0ff8848f3d49d5c4593d9d400352cd57
   - enabled: 1
-    path: Assets/Scenes/Facilitator.unity
+    path: Assets/Scenes/Main.unity
     guid: 9953fa982754c9149ba18c927a54dca1
