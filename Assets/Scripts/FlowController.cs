@@ -11,6 +11,9 @@ public class FlowController : MonoBehaviour {
 	public GameObject selectPanel;
 	public GameObject networkPanel;
 	public GameObject faciCanvas;
+	public GameObject musicPanel;
+	public GameObject musicOnButton;
+	public GameObject musicOffButton;
 	public GameObject[] scenes;
 	public AudioClip[] themeMusicForEachScene;
 	public AudioClip[] musicInUse;
@@ -19,14 +22,11 @@ public class FlowController : MonoBehaviour {
 	public int[] hourForEachScene;
 	public int[] minForEachScene;
 	public GameObject[] props;
-	// public GameObject networkPrefab;
+	// private bool switchOfMainAudioSource = true;
+	// public Text signOfMainAudioSource;
 	public AudioSource mainAudioSource;
-	private bool switchOfMainAudioSource = true;
-	public Text signOfMainAudioSource;
+	
 	public AudioSource successSoundSource;
-	public GameObject musicOnButton;
-	public GameObject musicOffButton;
-	public GameObject musicPanel;
 	
 	private int currentScene = 0;
 

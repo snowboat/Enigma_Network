@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
+/*
+	This script is for the network prefab to send signals to props.
+ */
+ 
 public class PropsController : NetworkBehaviour {
     private GameObject clock;
     private GameObject radio;
