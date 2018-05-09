@@ -41,8 +41,8 @@ public class FlowController : MonoBehaviour {
 		networkPanel.SetActive(false);
 		faciCanvas.SetActive(false);
 		musicPanel.SetActive(true);
-		musicOnButton.SetActive(true);
-		musicOffButton.SetActive(false);
+		musicOnButton.SetActive(false);
+		musicOffButton.SetActive(true);
 		// Set the active state of scenes in faci canvas
 		if (scenes.Length > 0) {
 			for (int i = 0; i < scenes.Length; i++) {

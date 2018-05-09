@@ -4638,7 +4638,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &726160222
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11395,7 +11395,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -11485,6 +11485,9 @@ MonoBehaviour:
   selectPanel: {fileID: 508734543}
   networkPanel: {fileID: 653134752}
   faciCanvas: {fileID: 480504082}
+  musicPanel: {fileID: 1342570689}
+  musicOnButton: {fileID: 726160221}
+  musicOffButton: {fileID: 1668238841}
   scenes:
   - {fileID: 1497184482}
   - {fileID: 1674900902}
@@ -11524,11 +11527,7 @@ MonoBehaviour:
   - {fileID: 1177934329}
   - {fileID: 448392416}
   mainAudioSource: {fileID: 1633439485}
-  signOfMainAudioSource: {fileID: 1052917422}
   successSoundSource: {fileID: 2118224242}
-  musicOnButton: {fileID: 726160221}
-  musicOffButton: {fileID: 1668238841}
-  musicPanel: {fileID: 1342570689}
 --- !u!4 &1633439487
 Transform:
   m_ObjectHideFlags: 0
@@ -11645,7 +11644,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1668238842
 RectTransform:
   m_ObjectHideFlags: 0
