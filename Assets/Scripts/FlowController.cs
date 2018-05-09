@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+	This script is the main flow controller for the whole app.
+*/
+
 public class FlowController : MonoBehaviour {
 
 	public GameObject mainCamera;
@@ -61,6 +65,7 @@ public class FlowController : MonoBehaviour {
 		networkPanel.SetActive(true);
 	}
 
+	// Join the game as a prop
 	public void JoinAs(int num) {
 		networkPanel.SetActive(false);
 		// set the camera for props
@@ -70,7 +75,7 @@ public class FlowController : MonoBehaviour {
 		props[num].SetActive(true);
 	}
 	
-	// "Next" button 
+	// "Next" button to enter the next scene
 	public void NextScene() {
 		if (scenes.Length > 0) {
 			scenes[currentScene].SetActive(false);
@@ -84,6 +89,7 @@ public class FlowController : MonoBehaviour {
 		}
 	}
 
+	// Change the background music of facilitator app
 	public void ChangeBackgroundMusic(int musicNumber) {
 		if (musicNumber < musicInUse.Length) {
 			Debug.Log("change background music");
@@ -93,6 +99,7 @@ public class FlowController : MonoBehaviour {
 		}
 	}
 
+	// Play the success sound through success sound source
 	public void PlaySuccessSound() {
 		if (successSoundSource.isPlaying) {
 			successSoundSource.Stop();
@@ -100,6 +107,7 @@ public class FlowController : MonoBehaviour {
 		successSoundSource.Play();
 	}
 
+	// Stop the previous background music and play the new one
 	void PlayBackgroundMusic(AudioClip clip) {
 		if (mainAudioSource.isPlaying) {
 			mainAudioSource.Stop();
@@ -112,6 +120,7 @@ public class FlowController : MonoBehaviour {
 		}
 	}
 
+	// Change scene information when the scene changes
 	void SetScene() {
 		// play theme song
 		if (currentScene < themeMusicForEachScene.Length) {
@@ -134,6 +143,7 @@ public class FlowController : MonoBehaviour {
 		}
 	}
 
+	// turn on/off the background music using same button, works in editor but not work in Android build
 	/*
 	public void turnMusic() {
 		if (switchOfMainAudioSource) {
@@ -148,6 +158,7 @@ public class FlowController : MonoBehaviour {
 	}
 	*/
 
+	// 2 functions to turn on/off the background music using seperate buttons
 	public void turnOnMusic() {
 		musicOnButton.SetActive(true);
 		mainAudioSource.volume = 1;

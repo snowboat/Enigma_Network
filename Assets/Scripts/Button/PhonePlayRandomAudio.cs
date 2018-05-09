@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+	This script is for Phone Random audio button.
+*/
+
 public class PhonePlayRandomAudio : MonoBehaviour {
 
 	public int firstClipNumber;

@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 /*
 	This script is for the network prefab to send signals to props.
- */
+*/
  
 public class PropsController : NetworkBehaviour {
     private GameObject clock;
@@ -15,6 +15,7 @@ public class PropsController : NetworkBehaviour {
     public AudioClip[] audioInUse;
 
 	// Send message to clock
+	// Set the time information for clock
 	[ClientRpc]
 	public void RpcSendTimeInfoToClock(string month, int date, int hour, int min) {
 		Debug.Log("set the clock");
@@ -30,6 +31,7 @@ public class PropsController : NetworkBehaviour {
 	}
 
 	// Send message to phone
+	// Active the phone
 	[ClientRpc]
     public void RpcActivePhone() {
 		Debug.Log("active phone");
@@ -42,6 +44,7 @@ public class PropsController : NetworkBehaviour {
 		}
 	}
 
+	// Set the right phone number for phone
 	[ClientRpc]
     public void RpcSetPhoneNumber(string number) {
 		Debug.Log("set phone number");
@@ -54,6 +57,7 @@ public class PropsController : NetworkBehaviour {
 		}
 	}
 
+	// Set the right audio clip for phone if the number is correctly dialed
 	[ClientRpc]
 	public void RpcSetPhoneClip(int audioClipNumber)
     {
@@ -67,6 +71,7 @@ public class PropsController : NetworkBehaviour {
 		}
     }
 
+	// Disable the phone
 	[ClientRpc]
     public void RpcDisablePhone()
     {
@@ -80,6 +85,7 @@ public class PropsController : NetworkBehaviour {
 		}
     }
 
+	// Let phone play a certain audio clip
 	[ClientRpc]
     public void RpcPhonePlayClip(int audioClipNumber)
     {
@@ -94,6 +100,7 @@ public class PropsController : NetworkBehaviour {
 		}
     }
 
+	// Let the phone ring
 	[ClientRpc]
     public void RpcPhoneRing()
     {
@@ -108,6 +115,7 @@ public class PropsController : NetworkBehaviour {
     }
 
 	// Send message to radio
+	// Set the right audio clip for radio
 	[ClientRpc]
 	public void RpcSetRadioClip(int audioClipNumber) {
 		Debug.Log("set radio clip");
@@ -120,6 +128,7 @@ public class PropsController : NetworkBehaviour {
 		}
 	}
 
+	// Set the right channel for radio
 	[ClientRpc]
 	public void RpcActiveRadioChannel(int channel) {
 		Debug.Log("enable radio");
@@ -132,6 +141,7 @@ public class PropsController : NetworkBehaviour {
 		}
 	}
 
+	// Disable the radio (Change all the channels to nonsignificant clips)
 	[ClientRpc]
 	public void RpcDisableRadio() {
 		Debug.Log("disable radio");

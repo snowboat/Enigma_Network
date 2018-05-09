@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+	This script is for Set Radio button.
+*/
+
+
 public class SetRadio : MonoBehaviour {
 
 	public int clipNumber;

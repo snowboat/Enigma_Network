@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+	This script is for Enable Phone button.
+*/
+
 public class EnablePhone : MonoBehaviour {
 
 	

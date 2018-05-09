@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+	This script is for Phone Audio button.
+*/
+
 public class PhonePlayAudio : MonoBehaviour {
 
 	public int clipNumber;
