@@ -1,30 +1,18 @@
-ENIGMA - ETC 2018SPRING
+ENIGMA - ETC 2018Spring
 
+This app is created for ENIGMA game project.
+Official website: https://www.etc.cmu.edu/projects/enigma/
 
-THIS APP IS CREATED FOR ENIGMA GAME PROJECT.
+ENIGMA project is a table-top role playing and puzzle solving game to experience the life of woman code breakers who broke the German Enigma machine in Bletchley Park during World War II.
 
+Team
+Producer - YUNHAO MAGIAN LI
+Designer - XUEJUN SALLY WANG
+Designer - HOWARD WON
+Designer - VICTORIA YOM
+Programmer - YUTONG ELIZA ZHANG
+Programmer - XUEFAN ZHOU
 
-SOFTWARE: UNITY 2017.4.1f1
-
-HARDWARE: GOOGLE PIXEL XL
-
-RESOLUSION: 1440 * 2560
-
-
-ENIGMA PROJECT IS A TABLE-TOP ROLE PLAYING AND PUZZLE SOLVING GAME TO EXPERIENCE THE LIFE OF WOMAN CODE BREAKERS WHO BROKE THE GERMAN ENIGMA MACHINE IN BLETCHLEY PARK DURING WORLD WAR II. 
-
-
-TEAM ENIGMA
-
-PRODUCER - YUNHAO MAGIAN LI
-
-DESIGNER - XUEJUN SALLY WANG
-
-DESIGNER - HOWARD WON
-
-DESIGNER - VICTORIA YOM
-
-PROGRAMMER - YUTONG ELIZA ZHANG
-
-PROGRAMMER - XUEFAN ZHOU
-
+Software: Unity 2017.4.1f1
+Hardware: Google Pixel XL
+Resolusion: 1440 * 2560
